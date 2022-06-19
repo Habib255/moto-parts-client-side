@@ -1,0 +1,398 @@
+[
+    {
+        "id": 1,
+        "name": "",
+        "details": "",
+        "image": "https://i.ibb.co/JmQ5t2k/air-piston-kit-motorcycle-white-background-132892268.jpg",
+        "minOrderQty": 100,
+        "availableQty": 20000,
+        "price": 105
+    },
+    {
+        "id": 2,
+        "name": "Coil-spring",
+        "details": "automotive-shock-absorber-coil-spring-isolated-white-background-black-steel-car-suspension-system-spare-parts-240157337",
+        "image": "https://i.ibb.co/0ZztZ9L/automotive-shock-absorber-coil-spring-isolated-white-background-black-steel-car-suspension-system-sp.jpg",
+        "minOrderQty": 100,
+        "availableQty": 20000,
+        "price": 20
+    },
+    {
+        "id": 3,
+        "name": "Brake & Clutch",
+        "details": "black-motorcycle-lever-isolated-white-clipping-path-49332672",
+        "image": "https://i.ibb.co/WPnYR5D/black-motorcycle-lever-isolated-white-clipping-path-49332672.jpg",
+        "minOrderQty": 100,
+        "availableQty": 20000,
+        "price": 68
+    },
+    {
+        "id": 4,
+        "name": "Brake & Clutch 2",
+        "details": "black-motorcycle-lever-isolated-white-clipping-path-49332819",
+        "image": "https://i.ibb.co/2KvCmWw/black-motorcycle-lever-isolated-white-clipping-path-49332819.jpg",
+        "minOrderQty": 100,
+        "availableQty": 20000,
+        "price": 95
+    },
+    {
+        "id": 5,
+        "name": "Brake & Clutch 3",
+        "details": "black-motorcycle-lever-isolated-white-clipping-path-49332839",
+        "image": "https://i.ibb.co/7zBMKFT/black-motorcycle-lever-isolated-white-clipping-path-49332839.jpg",
+        "minOrderQty": 100,
+        "availableQty": 20000,
+        "price": 95
+    },
+    {
+        "id": 6,
+        "name": "Brake & Clutch 4",
+        "details": "black-motorcycle-lever-isolated-white-clipping-path-49332844",
+        "image": "https://i.ibb.co/L1zbqw3/black-motorcycle-lever-isolated-white-clipping-path-49332844.jpg",
+        "minOrderQty": 100,
+        "availableQty": 20000,
+        "price": 95
+    },
+    {
+        "id": 7,
+        "name": "Brake & Clutch 5",
+        "details": "black-motorcycle-lever-white-isolated-49332830",
+        "image": "https://i.ibb.co/LzQMPdc/black-motorcycle-lever-white-isolated-49332830.jpg",
+        "minOrderQty": 100,
+        "availableQty": 20000,
+        "price": 95
+    },
+    {
+        "id": 8,
+        "name": "Air Tube",
+        "details": "car-bicycle-motorcycle-scooter-air-tube-wheel-air-tube-motorcycles-scooters-bicycles-cars-isolated-white-background-231049812",
+        "image": "https://i.ibb.co/y0Rk3q8/car-bicycle-motorcycle-scooter-air-tube-wheel-air-tube-motorcycles-scooters-bicycles-cars-isolated-w.jpg",
+        "minOrderQty": 100,
+        "availableQty": 20000,
+        "price": 95
+    },
+    {
+        "id": 9,
+        "name": "Bearing",
+        "details": "closed-bearing-white-background-new-spare-part-close-up-closed-bearing-white-background-new-spare-part-close-up-234486154",
+        "image": "https://i.ibb.co/HD0qT39/closed-bearing-white-background-new-spare-part-close-up-closed-bearing-white-background-new-spare-pa.jpg",
+        "minOrderQty": 100,
+        "availableQty": 20000,
+        "price": 95
+    },
+    {
+        "id": 10,
+        "name": "Modern Glass",
+        "details": "closeup-great-motorcycle-lot-chrome-gloss-modern-motorcycle-technology-confusing-sight-motorcycle-front-173423014",
+        "image": "https://i.ibb.co/nkknC31/closeup-great-motorcycle-lot-chrome-gloss-modern-motorcycle-technology-confusing-sight-motorcycle-fr.jpg",
+        "minOrderQty": 100,
+        "availableQty": 20000,
+        "price": 95
+    },
+    {
+        "id": 11,
+        "name": "Spare-Parts",
+        "details": "contact-point-old-school-motorcycle-spare-parts-197228091",
+        "image": "https://i.ibb.co/5xrM9LK/contact-point-old-school-motorcycle-spare-parts-197228091.jpg",
+        "minOrderQty": 100,
+        "availableQty": 20000,
+        "price": 95
+    },
+    {
+        "id": 12,
+        "name": "Brake Disk",
+        "details": "detail-rear-chain-motorcycle-brake-disc-detail-rear-chain-motorcycle-brake-disc-high-quality-221485674",
+        "image": "https://i.ibb.co/zQ6SdLM/detail-rear-chain-motorcycle-brake-disc-detail-rear-chain-motorcycle-brake-disc-high-quality-2214856.jpg",
+        "minOrderQty": 100,
+        "availableQty": 20000,
+        "price": 95
+    },
+    {
+        "id": 13,
+        "name": "Repairing Parts",
+        "details": "detail-repair-machine-product-made-metal-spare-part-motorcycle-detail-repair-machine-product-132892089",
+        "image": "https://i.ibb.co/R2n0Kbb/detail-repair-machine-product-made-metal-spare-part-motorcycle-detail-repair-machine-product-1328920.jpg",
+        "minOrderQty": 100,
+        "availableQty": 20000,
+        "price": 95
+    },
+    {
+        "id": 14,
+        "name": "Accessories Parts",
+        "details": "equipment-parts-various-stroke-motorcycle-accessories-spare-150700286",
+        "image": "https://i.ibb.co/TmYKZ19/equipment-parts-various-stroke-motorcycle-accessories-spare-150700286.jpg",
+        "minOrderQty": 100,
+        "availableQty": 20000,
+        "price": 95
+    },
+    {
+        "id": 15,
+        "name": "Gear Shaft",
+        "details": "gears-impaled-shaft-spline-replacement-spare-part-machine-tool-149648644",
+        "image": "https://i.ibb.co/nM4RqmY/gears-impaled-shaft-spline-replacement-spare-part-machine-tool-149648644.jpg",
+        "minOrderQty": 100,
+        "availableQty": 20000,
+        "price": 95
+    },
+    {
+        "id": 16,
+        "name": "Grey Helmet",
+        "details": "gray-shiny-motorcycle-helmet-white-background-29707283",
+        "image": "https://i.ibb.co/G5kHWdL/gray-shiny-motorcycle-helmet-white-background-29707283.jpg",
+        "minOrderQty": 100,
+        "availableQty": 20000,
+        "price": 95
+    },
+    {
+        "id": 17,
+        "name": " Red Helmet",
+        "details": "kenny-eliason-209FvE_57H8-unsplash",
+        "image": "https://i.ibb.co/zbr6NS0/kenny-eliason-209-Fv-E-57-H8-unsplash.jpg",
+        "minOrderQty": 100,
+        "availableQty": 20000,
+        "price": 95
+    },
+    {
+        "id": 18,
+        "name": "Brake wire",
+        "details": "metal-cable-parking-brake-isolated-white-background-auto-service-industry-parts-catalog-spare-244498803",
+        "image": "https://i.ibb.co/S0h4s8D/metal-cable-parking-brake-isolated-white-background-auto-service-industry-parts-catalog-spare-244498.jpg",
+        "minOrderQty": 100,
+        "availableQty": 20000,
+        "price": 95
+    },
+    {
+        "id": 19,
+        "name": "Metal Spring",
+        "details": "metal-springs-white-background-new-spare-part-metal-springs-white-background-new-spare-part-234486240",
+        "image": "https://i.ibb.co/wLJVz1y/metal-springs-white-background-new-spare-part-metal-springs-white-background-new-spare-part-23448624.jpg",
+        "minOrderQty": 100,
+        "availableQty": 20000,
+        "price": 95
+    },
+    {
+        "id": 20,
+        "name": "Seat package",
+        "details": "motorbike-some-detail-parts-seat-tank-filter-exhaust-rear-light-motorcycle-part-shop-201752435",
+        "image": "https://i.ibb.co/KhHhftd/motorbike-some-detail-parts-seat-tank-filter-exhaust-rear-light-motorcycle-part-shop-201752435.jpg",
+        "minOrderQty": 100,
+        "availableQty": 20000,
+        "price": 95
+    },
+    {
+        "id": 21,
+        "name": "Front Parts",
+        "details": "motorcycle-accessories-spare-parts-equipment-parts-various-parts-stroke-motorcycle-150700570",
+        "image": "https://i.ibb.co/sCjhxX7/motorcycle-accessories-spare-parts-equipment-parts-various-parts-stroke-motorcycle-150700570.jpg",
+        "minOrderQty": 100,
+        "availableQty": 20000,
+        "price": 95
+    },
+    {
+        "id": 22,
+        "name": "helmet RR2",
+        "details": "motorcycle-helmet-22053909",
+        "image": "https://i.ibb.co/Jv7j25j/motorcycle-helmet-22053909.jpg",
+        "minOrderQty": 100,
+        "availableQty": 20000,
+        "price": 95
+    },
+    {
+        "id": 23,
+        "name": "Clasic Speedometer",
+        "details": "motorcycle-spare-parts-components-engine-speedometer-motorcycle-spare-parts-components-engine-speedometer-lighting-153623713",
+        "image": "https://i.ibb.co/jv8qYdc/motorcycle-spare-parts-components-engine-speedometer-motorcycle-spare-parts-components-engine-speedo.jpg",
+        "minOrderQty": 100,
+        "availableQty": 20000,
+        "price": 95
+    },
+    {
+        "id": 24,
+        "name": "Spare Parts",
+        "details": "spare-parts-black-background-motorcycle-parts-166603466",
+        "image": "https://i.ibb.co/BVSgmsH/old-motorcycle-spare-parts-black-background-old-motorcycle-spare-parts-black-background-motorcycle-p.jpg",
+        "minOrderQty": 100,
+        "availableQty": 20000,
+        "price": 95
+    },
+    {
+        "id": 25,
+        "name": "Spare Parts2",
+        "details": "spare-parts-white-background-damaged-166603622",
+        "image": "https://i.ibb.co/YyPpTdD/old-motorcycle-spare-parts-white-background-damaged-166603622.jpg",
+        "minOrderQty": 100,
+        "availableQty": 20000,
+        "price": 95
+    },
+    {
+        "id": 26,
+        "name": "Spare Parts3",
+        "details": "old-motorcycle-spare-parts-white-background-damaged-166603791",
+        "image": "https://i.ibb.co/qJC5dZC/old-motorcycle-spare-parts-white-background-damaged-166603791.jpg",
+        "minOrderQty": 100,
+        "availableQty": 20000,
+        "price": 95
+    },
+    {
+        "id": 27,
+        "name": "Spare Parts4",
+        "details": "old-motorcycle-spare-parts-white-background-motorcycle-parts-damaged-old-motorcycle-spare-parts-white-166603679",
+        "image": "https://i.ibb.co/kyN4dWr/old-motorcycle-spare-parts-white-background-motorcycle-parts-damaged-old-motorcycle-spare-parts-whit.jpg",
+        "minOrderQty": 100,
+        "availableQty": 20000,
+        "price": 95
+    },
+    {
+        "id": 28,
+        "name": "Spare Parts5",
+        "details": "old-motorcycle-spare-parts-white-background-motorcycle-parts-damaged-old-motorcycle-spare-parts-white-166603823",
+        "image": "https://i.ibb.co/Fw6yczr/old-motorcycle-spare-parts-white-background-motorcycle-parts-damaged-old-motorcycle-spare-parts-whit.jpg",
+        "minOrderQty": 100,
+        "availableQty": 20000,
+        "price": 95
+    },
+    {
+        "id": 29,
+        "name": "Spare Parts6",
+        "details": "old-motorcycle-spare-parts-white-background-old-motorcycle-spare-parts-white-background-motorcycle-parts-166603316",
+        "image": "https://i.ibb.co/QFMXJ6X/old-motorcycle-spare-parts-white-background-old-motorcycle-spare-parts-white-background-motorcycle-p.jpg",
+        "minOrderQty": 100,
+        "availableQty": 20000,
+        "price": 95
+    },
+    {
+        "id": 30,
+        "name": "Spare Parts7",
+        "details": "old-motorcycle-spare-parts-white-background-old-motorcycle-spare-parts-white-background-motorcycle-parts-166603509",
+        "image": "https://i.ibb.co/xghtKy3/old-motorcycle-spare-parts-white-background-old-motorcycle-spare-parts-white-background-motorcycle-p.jpg",
+        "minOrderQty": 100,
+        "availableQty": 20000,
+        "price": 95
+    },
+    {
+        "id": 31,
+        "name": "Spare Parts8",
+        "details": "old-motorcycle-spare-parts-white-background-old-motorcycle-spare-parts-white-background-motorcycle-parts-166603527",
+        "image": "https://i.ibb.co/HGVhSKD/old-motorcycle-spare-parts-white-background-old-motorcycle-spare-parts-white-background-motorcycle-p.jpg",
+        "minOrderQty": 100,
+        "availableQty": 20000,
+        "price": 95
+    },
+    {
+        "id": 32,
+        "name": "Spare Parts9",
+        "details": "old-motorcycle-spare-parts-white-background-old-motorcycle-spare-parts-white-background-motorcycle-parts-166603629",
+        "image": "https://i.ibb.co/kS20VxZ/old-motorcycle-spare-parts-white-background-old-motorcycle-spare-parts-white-background-motorcycle-p.jpg",
+        "minOrderQty": 100,
+        "availableQty": 20000,
+        "price": 95
+    },
+    {
+        "id": 33,
+        "name": "Spare Parts10",
+        "details": "old-motorcycle-spare-parts-white-background-old-motorcycle-spare-parts-white-background-motorcycle-parts-166603706",
+        "image": "https://i.ibb.co/d5XJSVz/old-motorcycle-spare-parts-white-background-old-motorcycle-spare-parts-white-background-motorcycle-p.jpg",
+        "minOrderQty": 100,
+        "availableQty": 20000,
+        "price": 95
+    },
+    {
+        "id": 34,
+        "name": "Mirror",
+        "details": "rearview-mirror-form-drop-motorcycle-classic-chrome-cruiser-handle-front-brake-gas-lever-chopper-speed-dialing-147050252",
+        "image": "https://i.ibb.co/y6Vp8wx/rearview-mirror-form-drop-motorcycle-classic-chrome-cruiser-handle-front-brake-gas-lever-chopper-spe.jpg",
+        "minOrderQty": 100,
+        "availableQty": 20000,
+        "price": 95
+    },
+    {
+        "id": 35,
+        "name": "Mirror 2",
+        "details": "rearview-mirror-motorcycle-classic-chrome-cruiser-handle-front-brake-gas-lever-chopper-speed-dialing-details-close-up-147050248",
+        "image": "https://i.ibb.co/njfG9Gp/rearview-mirror-motorcycle-classic-chrome-cruiser-handle-front-brake-gas-lever-chopper-speed-dialing.jpg",
+        "minOrderQty": 100,
+        "availableQty": 20000,
+        "price": 95
+    },
+    {
+        "id": 36,
+        "name": "Ancient Mirror",
+        "details": "reflection-ancient-residental-building-rear-view-mirror-motorcycle-front-blurred-sidewalk-defocused-172585060",
+        "image": "https://i.ibb.co/L0kB4FC/reflection-ancient-residental-building-rear-view-mirror-motorcycle-front-blurred-sidewalk-defocused.jpg",
+        "minOrderQty": 100,
+        "availableQty": 20000,
+        "price": 95
+    },
+    {
+        "id": 37,
+        "name": "Carburetor",
+        "details": "small-carburetor-white-background-new-spare-part-chainsaw-small-carburetor-white-background-new-spare-part-chainsaw-234486138",
+        "image": "https://i.ibb.co/1dTG51Y/small-carburetor-white-background-new-spare-part-chainsaw-small-carburetor-white-background-new-spar.jpg",
+        "minOrderQty": 100,
+        "availableQty": 20000,
+        "price": 95
+    },
+    {
+        "id": 38,
+        "name": "Pedometer",
+        "details": "spare-parts-car-speedometer-dashboard-white-background-isolated-199198878",
+        "image": "https://i.ibb.co/68k2LNC/spare-parts-car-speedometer-dashboard-white-background-isolated-199198878.jpg",
+        "minOrderQty": 100,
+        "availableQty": 20000,
+        "price": 95
+    },
+    {
+        "id": 39,
+        "name": "Throttle Body Parts",
+        "details": "throttle-body-assy-motorcycle-spare-part-throttle-body-assy-motorcycle-spare-part-155519461",
+        "image": "https://i.ibb.co/Jt4y20Q/throttle-body-assy-motorcycle-spare-part-throttle-body-assy-motorcycle-spare-part-155519461.jpg",
+        "minOrderQty": 100,
+        "availableQty": 20000,
+        "price": 95
+    },
+    {
+        "id": 40,
+        "name": "Chain",
+        "details": "chain-motorcycles-parts-white-background-focus-used-chain-motorcycles-parts-white-background-208598876",
+        "image": "https://i.ibb.co/9ZdzgSL/used-chain-motorcycles-parts-white-background-focus-used-chain-motorcycles-parts-white-background-20.jpg",
+        "minOrderQty": 100,
+        "availableQty": 20000,
+        "price": 95
+    },
+    {
+        "id": 41,
+        "name": "Chain 2",
+        "details": "chain-motorcycles-parts-white-background-focus-used-chain-motorcycles-parts-white-background-208598888",
+        "image": "https://i.ibb.co/DQ1jVyf/used-chain-motorcycles-parts-white-background-focus-used-chain-motorcycles-parts-white-background-20.jpg",
+        "minOrderQty": 100,
+        "availableQty": 20000,
+        "price": 95
+    },
+    {
+        "id": 42,
+        "name": "Connecting Rod",
+        "details": "connecting-rod-motorcycles-parts-white-background-focus-used-connecting-rod-motorcycles-parts-white-208598893",
+        "image": "https://i.ibb.co/Rp25Vxz/used-connecting-rod-motorcycles-parts-white-background-focus-used-connecting-rod-motorcycles-parts-w.jpg",
+        "minOrderQty": 100,
+        "availableQty": 20000,
+        "price": 40
+    },
+    {
+        "id": 43,
+        "name": "Disk Brake",
+        "details": "disk-brake-parts-motorcycles-various-spare-gray-background-focus-used-disk-brake-parts-motorcycles-various-spare-208598904",
+        "image": "https://i.ibb.co/wNVLzST/used-disk-brake-parts-motorcycles-various-spare-gray-background-focus-used-disk-brake-parts-motorcyc.jpg",
+        "minOrderQty": 100,
+        "availableQty": 20000,
+        "price": 80
+    },
+    {
+        "id": 44,
+        "name": "Carburetor 2",
+        "details": "various-car-parts-accessories-isolated-carburetor-152009724",
+        "image": "https://i.ibb.co/xJmQcC5/various-car-parts-accessories-isolated-white-background-image-carburetor-152009724.jpg",
+        "minOrderQty": 50,
+        "availableQty": 2000,
+        "price": 105
+    }
+]
