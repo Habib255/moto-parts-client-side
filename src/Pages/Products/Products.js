@@ -1,15 +1,15 @@
 import React from 'react';
 import UseProducts from '../Hooks/UseProducts';
-import Product from './Product';
+import Product from '../Products/Product';
 
 const Products = () => {
     const [products] = UseProducts([])
     return (
-        <div className=''>
-            <div className='my-4'>
+        <div className='ml-5'>
+            <div className='my-10'>
                 <h2 className='font-bold text-center text-5xl'>All Products are here!</h2>
             </div>
-            <div className='mx-7 space-y-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+            <div className='flex flex-wrap gap-10'>
                 {
                     products.map(product => <Product key="product.id" product={product}></Product>)
                 }

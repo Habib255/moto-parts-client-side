@@ -6,7 +6,7 @@ import Footer from './Pages/Shared/Footer';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Login/Register';
 import Dashboard from './Pages/Dashboard/Dashboard';
-import Products from './Pages/Home/Products';
+import Products from './Pages/Products/Products';
 
 function App() {
   return (

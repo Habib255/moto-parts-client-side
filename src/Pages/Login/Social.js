@@ -1,8 +1,31 @@
 import React from 'react';
+import auth from '../../firebase.init';
+import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
+import Loading from '../Shared/Loading';
+
 
 const Social = () => {
+    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+    const navigate = useNavigate()
+    let error;
+    if (gUser) {
+        return navigate('/home')
+    }
+    if (gLoading) {
+        <Loading></Loading>
+    }
+    if (gError) {
+        error = <h6 className='text-red-500'>Error: {gError?.message}</h6>
+    }
+
+
+    const handleSignInWithGoogle = () => {
+        signInWithGoogle()
+    }
     return (
         <div>
+            {error}
             <div
                 class="flex items-center my-3 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5"
             >
@@ -26,6 +49,7 @@ const Social = () => {
                 </button>
 
                 <button
+                    onClick={handleSignInWithGoogle}
                     type="button"
                     data-mdb-ripple="true"
                     data-mdb-ripple-color="light"

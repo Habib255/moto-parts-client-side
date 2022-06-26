@@ -1,11 +1,45 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { useForm } from "react-hook-form";
+import React, { useState } from 'react';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useForm } from 'react-hook-form';
+import { Link, useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
+import Loading from '../Shared/Loading';
 import Social from './Social';
 
 const Register = () => {
-    const { register, formState: { errors }, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
+    const [passError, setPassError] = useState('')
+    const { register, formState: { errors }, handleSubmit, reset } = useForm();
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth);
+    if (loading) {
+        <Loading></Loading>
+    }
+    const navigate = useNavigate()
+    if (user) {
+        return navigate('/home')
+    }
+    const onSubmit = data => {
+        console.log(data)
+        if (data.confirmPassword === '') {
+            return setPassError('Enter confirm password')
+
+        }
+        if (data.password !== data.confirmPassword) {
+            return setPassError('Both Password should match')
+
+
+        }
+        if (error) {
+            return <p className='text-red-500'>{error.message}</p>
+
+        }
+        createUserWithEmailAndPassword(data.email, data.password)
+    };
+
     return (
 
         <div class="hero min-h-screen bg-base-200">
@@ -15,34 +49,65 @@ const Register = () => {
                 <div class="card w-full shadow-2xl bg-base-100">
 
                     <div class="card-body">
-                        <h2 className='text-center text-3xl font-bold'>Register</h2>
-                        <div class="form-control">
-                            <label class="label">
-                                <span class="label-text">Email</span>
-                            </label>
-                            <input type="text" placeholder="email" class="input input-bordered" />
-                        </div>
-                        <div class="form-control">
-                            <label class="label">
-                                <span class="label-text">Password</span>
-                            </label>
-                            <input type="text" placeholder="password" class="input input-bordered" />
+                        <h2 className='text-center text-4xl font-bold'>Register</h2>
+                        <form onSubmit={handleSubmit(onSubmit)}>
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">Email</span>
+                                </label>
+                                <input type="text" placeholder="email" class="input input-bordered" {...register("email", {
+                                    required: {
+                                        value: true, message: 'Email is required'
+                                    },
+                                    pattern: {
+                                        value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
+                                        message: 'Enter a valid Email'
+                                    }
+                                })} />
+                                <label class="label">
+                                    {errors.email && <span class="label-text text-red-700 ">{errors.email.message}</span>}
+                                </label>
+                            </div>
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">Password</span>
+                                </label>
+                                <input name='password' type="password" placeholder="password" class="input input-bordered" {...register("password", {
+                                    required: {
+                                        value: true, message: 'password is required'
+                                    },
+                                    pattern: {
+                                        value: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/,
+                                        message: 'Password contains 8 character & min 1 letter'
+                                    }
+                                })} />
+                                <label class="label">
+                                    {errors.password && <span class="label-text text-red-700 ">{errors.password.message}</span>}
+                                </label>
 
-                        </div>
-                        <div class="form-control">
-                            <label class="label">
-                                <span class="label-text">Confirm Password</span>
-                            </label>
-                            <input type="text" placeholder="Retype password" class="input input-bordered" />
-                            <label class="label">
-                                <Link to="" class="label-text-alt link link-hover"> Forget Password</Link>
-                            </label>
-                        </div>
-                        <div class="form-control mt-2">
-                            <button class="btn btn-primary">Login</button>
-                        </div>
+
+                            </div>
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">Confirm Password</span>
+                                </label>
+                                <input type="password" placeholder="Confirm Password" class="input input-bordered" {...register("confirmPassword", {
+
+
+
+                                })} />
+                                <label class="label">
+                                    <span class="label-text text-red-700 ">{passError}</span>
+                                </label>
+
+
+                            </div>
+                            <div class="form-control mt-3">
+                                <button type='submit' class="btn btn-primary">Register</button>
+                            </div>
+                        </form>
                         <label class="label">
-                            <Link to="/login" class="label-text-alt link link-hover">Already have an account?</Link>
+                            <Link to="/login" class="label-text-alt link link-hover">Already Register!!?</Link>
                         </label>
 
                         <Social></Social>
