@@ -29,7 +29,7 @@ const Social = () => {
             <div
                 class="flex items-center my-3 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5"
             >
-                <p class="text-center font-semibold mx-4 mb-0">Or</p>
+                <p class="text-center font-semibold mx-1 mb-0">Or use social</p>
             </div>
 
             <div class="flex flex-row items-center justify-center space-x-6">

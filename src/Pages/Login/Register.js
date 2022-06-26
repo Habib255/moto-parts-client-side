@@ -8,6 +8,7 @@ import Social from './Social';
 
 const Register = () => {
     const [passError, setPassError] = useState('')
+    const navigate = useNavigate()
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const [
         createUserWithEmailAndPassword,
@@ -15,28 +16,23 @@ const Register = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
+    let createUserError;
     if (loading) {
         <Loading></Loading>
     }
-    const navigate = useNavigate()
+
     if (user) {
         return navigate('/home')
     }
-    const onSubmit = data => {
-        console.log(data)
-        if (data.confirmPassword === '') {
-            return setPassError('Enter confirm password')
+    if (error) {
+        createUserError = <p className='text-red-500'>{error.message}</p>
 
-        }
+    }
+    const onSubmit = data => {
         if (data.password !== data.confirmPassword) {
             return setPassError('Both Password should match')
-
-
         }
-        if (error) {
-            return <p className='text-red-500'>{error.message}</p>
-
-        }
+        setPassError('')
         createUserWithEmailAndPassword(data.email, data.password)
     };
 
@@ -92,11 +88,15 @@ const Register = () => {
                                     <span class="label-text">Confirm Password</span>
                                 </label>
                                 <input type="password" placeholder="Confirm Password" class="input input-bordered" {...register("confirmPassword", {
-
+                                    required: {
+                                        value: true, message: 'Confirm password is required'
+                                    },
 
 
                                 })} />
                                 <label class="label">
+                                    {errors.confirmPassword && <span class="label-text text-red-700 ">{errors.confirmPassword.message}</span>}
+
                                     <span class="label-text text-red-700 ">{passError}</span>
                                 </label>
 
@@ -106,8 +106,9 @@ const Register = () => {
                                 <button type='submit' class="btn btn-primary">Register</button>
                             </div>
                         </form>
+                        {createUserError}
                         <label class="label">
-                            <Link to="/login" class="label-text-alt link link-hover">Already Register!!?</Link>
+                            <Link to="/login" class="label-text-alt link link-hover">Already Registered ?</Link>
                         </label>
 
                         <Social></Social>

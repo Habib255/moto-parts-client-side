@@ -1,11 +1,34 @@
 import React from 'react';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
+import Loading from '../Shared/Loading';
 import Social from './Social';
 
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
+    const navigate = useNavigate()
+    let loginError
+    if (loading) {
+        return <Loading></Loading>
+    }
+    if (user) {
+        return navigate('/home')
+
+    }
+    if (error) {
+        loginError = <p>{error.message}</p>
+    }
+    const onSubmit = data => {
+        signInWithEmailAndPassword(data.email, data.password)
+    }
     return (
 
         <div class="hero min-h-screen bg-base-200">
@@ -57,10 +80,15 @@ const Login = () => {
                             </div>
                             <div class="form-control mt-3">
                                 <button type='submit' class="btn btn-primary">Login</button>
+
                             </div>
+                            <label class="label">
+                                <span class="label-text text-red-700 ">{loginError}</span>
+                            </label>
                         </form>
+
                         <label class="label">
-                            <Link to="/register" class="label-text-alt link link-hover">Not Register yet?</Link>
+                            <Link to="/register" class="label-text-alt link link-hover">Not Registered yet?</Link>
                         </label>
 
                         <Social></Social>
