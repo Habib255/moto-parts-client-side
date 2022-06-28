@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Loading from '../Shared/Loading';
 import Social from './Social';
@@ -16,11 +16,13 @@ const Login = () => {
     ] = useSignInWithEmailAndPassword(auth);
     const navigate = useNavigate()
     let loginError
+    const location = useLocation()
+    let from = location.state?.from?.pathname || "/home";
     if (loading) {
         return <Loading></Loading>
     }
     if (user) {
-        return navigate('/home')
+        return navigate(from, { replace: true });
 
     }
     if (error) {
@@ -38,7 +40,10 @@ const Login = () => {
                 <div class="card w-full shadow-2xl bg-base-100">
 
                     <div class="card-body">
-                        <h2 className='text-center text-4xl font-bold'>Login</h2>
+                        <svg xmlns="http://www.w3.org/2000/svg" className=" place-self-center h-20 w-20" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clipRule="evenodd" />
+                        </svg>
+
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <div class="form-control">
                                 <label class="label">
@@ -61,7 +66,7 @@ const Login = () => {
                                 <label class="label">
                                     <span class="label-text">Password</span>
                                 </label>
-                                <input type="text" placeholder="password" class="input input-bordered" {...register("password", {
+                                <input type="password" placeholder="password" class="input input-bordered" {...register("password", {
                                     required: {
                                         value: true, message: 'password is required'
                                     },
@@ -88,7 +93,7 @@ const Login = () => {
                         </form>
 
                         <label class="label">
-                            <Link to="/register" class="label-text-alt link link-hover">Not Registered yet?</Link>
+                            <Link to="/register" class="label-text-alt link link-hover">Don't Have any Account?</Link>
                         </label>
 
                         <Social></Social>

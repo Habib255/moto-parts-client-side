@@ -10,7 +10,6 @@ const Home = () => {
 
             <Carousel></Carousel>
             <HomeProducts></HomeProducts>
-            <Loading></Loading>
         </div>
     );
 };

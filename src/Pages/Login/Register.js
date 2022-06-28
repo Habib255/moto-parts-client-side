@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+
+import React from 'react';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
@@ -7,35 +8,33 @@ import Loading from '../Shared/Loading';
 import Social from './Social';
 
 const Register = () => {
-    const [passError, setPassError] = useState('')
     const navigate = useNavigate()
-    const { register, formState: { errors }, handleSubmit, reset } = useForm();
+    const { register, formState: { errors }, handleSubmit, watch } = useForm();
+    const password = watch('password')
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
+    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
     let createUserError;
     if (loading) {
         <Loading></Loading>
     }
-
     if (user) {
+        console.log(user)
         return navigate('/home')
+
     }
     if (error) {
         createUserError = <p className='text-red-500'>{error.message}</p>
 
     }
-    const onSubmit = data => {
-        if (data.password !== data.confirmPassword) {
-            return setPassError('Both Password should match')
-        }
-        setPassError('')
-        createUserWithEmailAndPassword(data.email, data.password)
+    const onSubmit = async data => {
+        await createUserWithEmailAndPassword(data.email, data.password)
+        await updateProfile({ displayName: data.name })
     };
-
     return (
 
         <div class="hero min-h-screen bg-base-200">
@@ -45,13 +44,28 @@ const Register = () => {
                 <div class="card w-full shadow-2xl bg-base-100">
 
                     <div class="card-body">
-                        <h2 className='text-center text-4xl font-bold'>Register</h2>
+                        <svg xmlns="http://www.w3.org/2000/svg" className="place-self-center h-20 w-20" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z" />
+                        </svg>
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <div class="form-control">
+
+                                <input type="text" placeholder="User Name" class="input input-bordered" {...register("name", {
+                                    required: {
+                                        value: true, message: 'Name is required'
+                                    },
+                                    pattern: {
+                                        value: /^[A-Za-z]/,
+                                        message: 'Enter a valid name'
+                                    }
+                                })} />
                                 <label class="label">
-                                    <span class="label-text">Email</span>
+                                    {errors.name && <span class="label-text text-red-700 ">{errors.name.message}</span>}
                                 </label>
-                                <input type="text" placeholder="email" class="input input-bordered" {...register("email", {
+                            </div>
+                            <div class="form-control">
+
+                                <input type="text" placeholder="Email" class="input input-bordered" {...register("email", {
                                     required: {
                                         value: true, message: 'Email is required'
                                     },
@@ -65,10 +79,8 @@ const Register = () => {
                                 </label>
                             </div>
                             <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Password</span>
-                                </label>
-                                <input name='password' type="password" placeholder="password" class="input input-bordered" {...register("password", {
+
+                                <input name='password' type="password" placeholder="Password" class="input input-bordered" {...register("password", {
                                     required: {
                                         value: true, message: 'password is required'
                                     },
@@ -81,34 +93,30 @@ const Register = () => {
                                     {errors.password && <span class="label-text text-red-700 ">{errors.password.message}</span>}
                                 </label>
 
-
                             </div>
                             <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Confirm Password</span>
-                                </label>
-                                <input type="password" placeholder="Confirm Password" class="input input-bordered" {...register("confirmPassword", {
-                                    required: {
-                                        value: true, message: 'Confirm password is required'
-                                    },
 
+                                <input type="password" placeholder="Confirm Password" class="input input-bordered" {...register("confirmPassword", {
+                                    required: 'confirm password is required',
+                                    validate: (value) =>
+                                        value === password || 'Both password should match'
 
                                 })} />
                                 <label class="label">
+
                                     {errors.confirmPassword && <span class="label-text text-red-700 ">{errors.confirmPassword.message}</span>}
 
-                                    <span class="label-text text-red-700 ">{passError}</span>
                                 </label>
 
 
                             </div>
                             <div class="form-control mt-3">
-                                <button type='submit' class="btn btn-primary">Register</button>
+                                <button type='submit' class="btn btn-primary">Create Account</button>
                             </div>
                         </form>
                         {createUserError}
                         <label class="label">
-                            <Link to="/login" class="label-text-alt link link-hover">Already Registered ?</Link>
+                            <Link to="/login" class="label-text-alt link link-hover">Already Have an Account ?</Link>
                         </label>
 
                         <Social></Social>

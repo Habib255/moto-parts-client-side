@@ -9,6 +9,7 @@ const Social = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const navigate = useNavigate()
     let error;
+    console.log(gUser)
     if (gUser) {
         return navigate('/home')
     }
