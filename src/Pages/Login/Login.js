@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -18,13 +18,16 @@ const Login = () => {
     let loginError
     const location = useLocation()
     let from = location.state?.from?.pathname || "/home";
+    useEffect(() => {
+        if (user) {
+            return navigate(from, { replace: true });
+        }
+    }, [user, navigate, from])
     if (loading) {
         return <Loading></Loading>
     }
-    if (user) {
-        return navigate(from, { replace: true });
 
-    }
+
     if (error) {
         loginError = <p>{error.message}</p>
     }
@@ -33,23 +36,23 @@ const Login = () => {
     }
     return (
 
-        <div class="hero min-h-screen bg-base-200">
+        <div className="hero min-h-screen bg-base-200">
 
-            <div class="hero-content w-full lg:w-4/12 md:w-1/2">
+            <div className="hero-content w-5/6 lg:w-3/6 md:w-4/6 xl:w-4/12">
 
-                <div class="card w-full shadow-2xl bg-base-100">
+                <div className="card w-full shadow-2xl bg-base-100">
 
-                    <div class="card-body">
+                    <div className="card-body">
                         <svg xmlns="http://www.w3.org/2000/svg" className=" place-self-center h-20 w-20" viewBox="0 0 20 20" fill="currentColor">
                             <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clipRule="evenodd" />
                         </svg>
 
                         <form onSubmit={handleSubmit(onSubmit)}>
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Email</span>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Email</span>
                                 </label>
-                                <input type="text" placeholder="email" class="input input-bordered" {...register("email", {
+                                <input type="text" placeholder="email" className="input input-bordered" {...register("email", {
                                     required: {
                                         value: true, message: 'Email is required'
                                     },
@@ -58,15 +61,15 @@ const Login = () => {
                                         message: 'Enter a valid Email'
                                     }
                                 })} />
-                                <label class="label">
-                                    {errors.email && <span class="label-text text-red-700 ">{errors.email.message}</span>}
+                                <label className="label">
+                                    {errors.email && <span className="label-text text-red-300 ">{errors.email.message}</span>}
                                 </label>
                             </div>
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Password</span>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" placeholder="password" class="input input-bordered" {...register("password", {
+                                <input type="password" placeholder="password" className="input input-bordered" {...register("password", {
                                     required: {
                                         value: true, message: 'password is required'
                                     },
@@ -75,25 +78,25 @@ const Login = () => {
                                         message: 'Password contains 8 character & min 1 letter'
                                     }
                                 })} />
-                                <label class="label">
-                                    {errors.password && <span class="label-text text-red-700 ">{errors.password.message}</span>}
+                                <label className="label">
+                                    {errors.password && <span className="label-text text-red-300 ">{errors.password.message}</span>}
                                 </label>
 
-                                <label class="label">
-                                    <Link to="" class="label-text-alt link link-hover"> Forget Password</Link>
+                                <label className="label">
+                                    <Link to="" className="label-text-alt link link-hover"> Forget Password</Link>
                                 </label>
                             </div>
-                            <div class="form-control mt-3">
-                                <button type='submit' class="btn btn-primary">Login</button>
+                            <div className="form-control mt-3">
+                                <button type='submit' className="btn btn-primary">Login</button>
 
                             </div>
-                            <label class="label">
-                                <span class="label-text text-red-700 ">{loginError}</span>
+                            <label className="label">
+                                <span className="label-text text-red-300 ">{loginError}</span>
                             </label>
                         </form>
 
-                        <label class="label">
-                            <Link to="/register" class="label-text-alt link link-hover">Don't Have any Account?</Link>
+                        <label className="label">
+                            <Link to="/register" className="label-text-alt link link-hover hover:text-primary">Don't Have any Account?</Link>
                         </label>
 
                         <Social></Social>
