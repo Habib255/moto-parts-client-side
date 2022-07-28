@@ -3,6 +3,7 @@ import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import useToken from '../Hooks/useToken';
 import Loading from '../Shared/Loading';
 import Social from './Social';
 
@@ -17,12 +18,13 @@ const Login = () => {
     const navigate = useNavigate()
     let loginError
     const location = useLocation()
+    const [token] = useToken(user)
     let from = location.state?.from?.pathname || "/home";
     useEffect(() => {
-        if (user) {
+        if (token) {
             return navigate(from, { replace: true });
         }
-    }, [user, navigate, from])
+    }, [token, navigate, from])
     if (loading) {
         return <Loading></Loading>
     }

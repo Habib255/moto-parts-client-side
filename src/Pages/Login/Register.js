@@ -4,6 +4,7 @@ import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-fireb
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import useToken from '../Hooks/useToken';
 import Loading from '../Shared/Loading';
 import Social from './Social';
 
@@ -22,14 +23,15 @@ const Register = () => {
     const location = useLocation()
     let from = location.state?.from?.pathname || "/home";
 
+    const [token] = useToken(user)
     if (loading || updating) {
         <Loading></Loading>
     }
     useEffect(() => {
-        if (user) {
+        if (token) {
             return navigate(from, { replace: true });
         }
-    }, [user, navigate, from])
+    }, [token, navigate, from])
 
 
     if (error || updateError) {

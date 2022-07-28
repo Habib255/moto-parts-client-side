@@ -15,7 +15,7 @@ const Product = ({ product }) => {
 
             </figure>
             <div className="card-actions justify-between px-10 pt-4">
-                <div className="badge badge-outline">In Stock {availableQty} pcs</div>
+                <div className={availableQty < minOrderQty ? 'badge badge-outline text-red-500' : 'badge badge-outline'} > {availableQty < minOrderQty ? 'Stock not available' : `In Stock ${availableQty} pcs`} </div>
                 <div className="badge badge-outline">Min. Order {minOrderQty} pcs</div>
             </div>
             <div className="card-body items-center text-center">
@@ -23,7 +23,7 @@ const Product = ({ product }) => {
                 <p>{details.slice(0, 30)} . . .</p>
                 <h2 className='font-bold'> Price: $ {price}</h2>
                 <div className="card-actions">
-                    <button onClick={() => purchaseItem(_id)} className="btn btn-primary">Buy Now</button>
+                    <button onClick={() => purchaseItem(_id)} className={availableQty < minOrderQty ? "btn-disabled text-slate-500" : 'btn btn-primary'}>Buy Now</button>
                 </div>
             </div>
         </div>
