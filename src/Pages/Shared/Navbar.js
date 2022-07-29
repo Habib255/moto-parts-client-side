@@ -77,6 +77,7 @@ const Navbar = () => {
                                 <li><Link to='/dashboard'>My Orders</Link></li>
                                 <li><Link to='/dashboard/myprofile'>My Profile</Link></li>
                                 <li><Link to='/dashboard/addreview'>Add Review</Link></li>
+                                <li><Link to='/dashboard/makeadmin'>Make Admin</Link></li>
                                 <li> <button onClick={logOut}> LogOut</button></li>
 
                             </ul>

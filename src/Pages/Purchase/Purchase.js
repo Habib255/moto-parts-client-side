@@ -4,10 +4,6 @@ import { useNavigate, useParams } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { toast } from 'react-toastify';
 
-
-
-
-
 const Purchase = () => {
     const { id } = useParams()
     const [currentUser] = useAuthState(auth);
@@ -33,6 +29,8 @@ const Purchase = () => {
         const amount = availableQty
         const newAvailableQty = parseInt(amount) - inputOrderQty
 
+        // update product quantity after done order
+
         const url = `http://localhost:5000/updateProduct/${id}`;
         fetch(url, {
             method: "PUT",
@@ -47,15 +45,15 @@ const Purchase = () => {
         toast(`ordered ${name} ${inputOrderQty} pcs`)
 
 
-
-
-
+        //    get database collection object value for new orderCollection
 
         const orderInformation = {
             productId: _id,
             productName: name,
             orderQuantity: inputOrderQty,
             price: totalPrice,
+            payment: '',
+            image: image,
             name: event.target.name.value,
             email: currentUser.email,
             phone: event.target.phone.value,
@@ -64,8 +62,7 @@ const Purchase = () => {
             country: event.target.country.value
         }
 
-
-
+        // create new collection on database for product which done order
 
         fetch('http://localhost:5000/order', {
             method: 'POST',
@@ -79,14 +76,7 @@ const Purchase = () => {
                 toast('Your Order is Added to My order. Check Dashboard for further action ')
                 navigate('/products')
             })
-
-
-
-
     };
-
-
-
     return (
         <>
             <div>
