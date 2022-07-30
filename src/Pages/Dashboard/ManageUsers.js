@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Loading from '../Shared/Loading';
 import { useQuery } from 'react-query'
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import AdminAction from './AdminAction';
+import DeleteUserModal from './DeleteUserModal';
 
-const MakeAdmin = () => {
+
+const ManageUsers = () => {
     const [user] = useAuthState(auth)
+    const [deleteModal, setDeleteModal] = useState(null)
+
 
     const { data, isLoading, refetch } = useQuery(['alluser', user], () => fetch('http://localhost:5000/user', {
         method: 'GET',
@@ -15,12 +20,6 @@ const MakeAdmin = () => {
     }).then(res => res.json()))
     if (isLoading) {
         return <Loading></Loading>
-    }
-    const makeAdmin = () => {
-
-    }
-    const deleteUser = () => {
-
     }
     refetch()
 
@@ -37,24 +36,13 @@ const MakeAdmin = () => {
                     </tr>
                 </thead>
                 {
-                    data.map((allUser, index) => <tbody>
-                        <tr>
-                            <th>{index + 1}</th>
-                            <td>{allUser.email}</td>
-                            <td>admin</td>
-                            <td>
-                                <button onClick={makeAdmin} class="btn btn-xs">make admin</button>
-                            </td>
-                            <td>
-                                <button onClick={deleteUser} class="btn btn-xs">Delete User</button>
-                            </td>
-                        </tr>
-                    </tbody>)
+                    data.map((allUser, index) => <AdminAction allUser={allUser} key={allUser._id} refetch={refetch} index={index} setDeleteModal={setDeleteModal}></AdminAction>)
 
                 }
             </table>
+            {deleteModal && <DeleteUserModal deleteModal={deleteModal} setDeleteModal={setDeleteModal} refetch={refetch} ></DeleteUserModal>}
         </div>
     );
 };
 
-export default MakeAdmin;
+export default ManageUsers;

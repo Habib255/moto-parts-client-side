@@ -15,10 +15,17 @@ import AddReview from './Pages/Dashboard/AddReview';
 import Blogs from './Blogs/Blogs';
 import MyPortfolio from './MyPortfolio/MyPortfolio';
 import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import MakeAdmin from './Pages/Dashboard/MakeAdmin';
+import ManageUsers from './Pages/Dashboard/ManageUsers';
+import RequireAdmin from './Pages/Login/RequireAdmin';
+import NotFound from './Pages/Shared/NotFound';
+import Payment from './Pages/Dashboard/Payment';
+import useAdmin from './Pages/Hooks/useAdmin';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from './firebase.init';
 
 function App() {
+  const [user] = useAuthState(auth)
+  const [admin] = useAdmin(user)
   return (
     <div>
       <Navbar></Navbar>
@@ -42,13 +49,19 @@ function App() {
             </RequireAuth>
           }
         >
-          <Route index element={<MyOrders></MyOrders>}></Route>
+          {admin &&
+            <Route index element={<MyProfile></MyProfile>}></Route>}
+          {!admin && <Route index element={<MyOrders></MyOrders>}></Route>
+          }
           <Route path='myprofile' element={<MyProfile></MyProfile>}></Route>
-          <Route path='addreview' element={<AddReview></AddReview>}></Route>
-          <Route path='makeadmin' element={<MakeAdmin></MakeAdmin>}></Route>
+          {!admin && <Route path='addreview' element={<AddReview></AddReview>}></Route>}
+          <Route path='payment/:id' element={<Payment></Payment>}></Route>
+          <Route path='manageusers' element={<RequireAdmin><ManageUsers></ManageUsers></RequireAdmin>}></Route>
         </Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
 
       </Routes>
+
       <Footer></Footer>
       <ToastContainer />
     </div>

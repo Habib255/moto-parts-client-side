@@ -21,7 +21,7 @@ const Register = () => {
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
     let createUserError;
     const location = useLocation()
-    let from = location.state?.from?.pathname || "/home";
+    let from = location.state?.from?.pathname || "/";
 
     const [token] = useToken(user)
     if (loading || updating) {
