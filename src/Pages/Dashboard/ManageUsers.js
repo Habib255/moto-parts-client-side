@@ -12,7 +12,7 @@ const ManageUsers = () => {
     const [deleteModal, setDeleteModal] = useState(null)
 
 
-    const { data, isLoading, refetch } = useQuery(['alluser', user], () => fetch('http://localhost:5000/user', {
+    const { data, isLoading, refetch } = useQuery(['alluser', user], () => fetch('https://thawing-waters-08691.herokuapp.com/user', {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`

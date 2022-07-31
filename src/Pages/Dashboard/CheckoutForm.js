@@ -12,7 +12,7 @@ const CheckoutForm = ({ order }) => {
     const [cardError, setCardError] = useState()
     const { price, name, email, _id } = order
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://thawing-waters-08691.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -76,7 +76,7 @@ const CheckoutForm = ({ order }) => {
 
             }
 
-            fetch(`http://localhost:5000/order/${_id}`, {
+            fetch(`https://thawing-waters-08691.herokuapp.com/order/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

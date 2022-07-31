@@ -3,7 +3,7 @@ import { toast } from 'react-toastify'
 const AdminAction = ({ allUser, index, refetch, setDeleteModal }) => {
     const { email, _id, role } = allUser
     const makeAdmin = () => {
-        fetch(`http://localhost:5000/user/admin/${email}`, {
+        fetch(`https://thawing-waters-08691.herokuapp.com/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

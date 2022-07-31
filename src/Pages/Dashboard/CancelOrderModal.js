@@ -5,7 +5,7 @@ const CancelOrderModal = ({ cancelModal, setCancelModal, refetch }) => {
     console.log(cancelModal)
     const { _id, productName, price, orderQuantity } = cancelModal
     const handleCancle = () => {
-        fetch(`http://localhost:5000/order/${_id}`, {
+        fetch(`https://thawing-waters-08691.herokuapp.com/order/${_id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

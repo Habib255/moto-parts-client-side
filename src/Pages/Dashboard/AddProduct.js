@@ -11,7 +11,7 @@ const AddProduct = () => {
     const [user] = useAuthState(auth)
     const onSubmit = async data => {
 
-        const url = `http://localhost:5000/product`
+        const url = `https://thawing-waters-08691.herokuapp.com/product`
         fetch(url, {
             method: "POST",
             headers: {
