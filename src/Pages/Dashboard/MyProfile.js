@@ -13,7 +13,7 @@ const MyProfile = () => {
 
     const onSubmit = async data => {
 
-        const url = `http://localhost:5000/user/${user.email}`
+        const url = `https://thawing-waters-08691.herokuapp.com/user/${user.email}`
         fetch(url, {
             method: "PUT",
             headers: {
@@ -32,7 +32,7 @@ const MyProfile = () => {
 
     }
 
-    const { data, isLoading, refetch, } = useQuery(['orders', user.email], () => fetch(`http://localhost:5000/user/${user.email}`, {
+    const { data, isLoading, refetch, } = useQuery(['orders', user.email], () => fetch(`https://thawing-waters-08691.herokuapp.com/user/${user.email}`, {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
