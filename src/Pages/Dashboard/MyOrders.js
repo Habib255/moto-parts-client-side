@@ -1,13 +1,16 @@
+import React, { useState } from 'react'
 import { signOut } from 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query'
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Loading from '../Shared/Loading';
+import CancelOrderModal from './CancelOrderModal';
 
 const MyOrders = () => {
     const [user] = useAuthState(auth)
     const navigate = useNavigate()
+    const [cancelModal, setCancelModal] = useState(null)
 
     const { data, isLoading, refetch, } = useQuery(['orders', user], () => fetch(`http://localhost:5000/order?email=${user.email}`, {
         method: 'GET',
@@ -27,6 +30,7 @@ const MyOrders = () => {
     }
     refetch()
 
+
     return (
         <>
             <div class="overflow-x-auto w-full">
@@ -40,10 +44,11 @@ const MyOrders = () => {
                             <th>Price</th>
                             <th>Payment details</th>
                             <th>Action</th>
+                            <th>Transaction Id</th>
                         </tr>
                     </thead>
 
-                    {data.map(order => <tbody key={order._id}>
+                    {data.map(order => <tbody key={order._id} setCancelModal={setCancelModal} cancelModal={cancelModal} refetch={refetch} >
 
                         <tr className='text-center'>
 
@@ -67,26 +72,39 @@ const MyOrders = () => {
 
 
                             {order.payment === true ?
-                                <td>
-                                    <Link to={`/dashboard/payment/${order._id}`}>  <button class="btn btn-ghost btn-xs">Pay Now</button></Link>
-                                </td>
-                                :
                                 <td> <span className='text-success '>paid</span></td>
+                                :
+                                <td>
+                                    <Link to={`/dashboard/payment/${order._id}`}>  <button class="btn btn-primary btn-xs">Pay Now</button></Link>
+                                </td>
+
 
                             }
 
 
                             {order.payment !== true ?
+                                <td>
+                                    <label onClick={() => setCancelModal(order)} for="delete-user-modal" class="btn btn-secondary btn-xs">Cancel Order</label>
+
+                                </td>
+                                :
                                 <td> <span className='text-cyan-600 '>Pending Delivery</span></td>
 
+                            }
+                            {!order.transactionId ?
+
+
+                                <td><p> Not Paid yet</p></td>
                                 :
-                                <td>
-                                    <button class="btn btn-ghost btn-xs">cancel order</button>
-                                </td>
+                                <td><p> {order.transactionId}</p></td>
+
                             }
                         </tr>
 
+
+
                     </tbody>)}
+                    {cancelModal && <CancelOrderModal cancelModal={cancelModal} setCancelModal={setCancelModal} refetch={refetch} ></CancelOrderModal>}
                 </table>
             </div>
         </>

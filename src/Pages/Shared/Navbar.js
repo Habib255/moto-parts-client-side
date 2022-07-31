@@ -52,11 +52,10 @@ const Navbar = () => {
                             <>
 
                                 <div class="dropdown dropdown-end dropdown-hover">
-                                    <label tabindex="3" class="">User
+                                    <label tabindex="3" class=""> <button onClick={logOut}>{user?.displayName?.slice(0, 8) || 'Log Out'}</button>
                                     </label>
 
-                                    <ul tabindex="3" class="dropdown-content mt-36 menu  shadow bg-base-100 rounded-box w-36">
-                                        <li><Link to='/dashboard/myprofile'>My Profile</Link></li>
+                                    <ul tabindex="3" class="dropdown-content mt-20 menu  shadow bg-base-100 rounded-box w-full">
                                         <li> <button onClick={logOut}> LogOut</button></li>
                                     </ul>
                                 </div>
@@ -79,9 +78,14 @@ const Navbar = () => {
                                 {user && !admin && <li><Link to='/dashboard'>My Orders</Link></li>}
                                 <li><Link to='/dashboard/myprofile'>My Profile</Link></li>
                                 {user && !admin && <li><Link to='/dashboard/addreview'>Add Review</Link></li>
-                                }                                {admin &&
+                                }
+                                {admin &&
                                     <li><Link to='/dashboard/manageusers'>Make Admin</Link></li>
                                 }
+                                {admin &&
+                                    <li><Link to='/dashboard/addproduct'>AddProduct</Link></li>
+                                }
+
                                 <li> <button onClick={logOut}> LogOut</button></li>
 
                             </ul>

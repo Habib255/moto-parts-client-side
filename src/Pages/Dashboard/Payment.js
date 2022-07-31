@@ -19,16 +19,16 @@ const Payment = () => {
         return <Loading></Loading>
     }
     return (
-        <div className='flex flex-col gap-10 justify-center'>
+        <div className='flex flex-col mt-20 gap-20 justify-center'>
 
-            <div class="card w-96 bg-base-100 text-center shadow-xl">
+            <div class="card min-w-max bg-base-100 max-h-max text-center shadow-xl">
                 <div class="card-body">
                     <h2 class="font-bold text-xl">Payment for {order?.productName}</h2>
                     <p>Total Quantity: {order?.orderQuantity}</p>
                     <p>Total price: {order?.price}</p>
                 </div>
             </div>
-            <div className='ard w-96 bg-base-100 shadow-xl'>
+            <div className='ard w-96 h-40 bg-base-100 shadow-xl'>
                 <Elements stripe={stripePromise}>
                     <CheckoutForm order={order} />
                 </Elements>
