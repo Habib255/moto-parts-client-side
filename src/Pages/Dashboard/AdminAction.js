@@ -41,7 +41,7 @@ const AdminAction = ({ allUser, index, refetch, setDeleteModal }) => {
                 {!role ?
 
                     < td >
-                        <button onClick={makeAdmin} class="btn btn-xs">make admin</button>
+                        <button onClick={makeAdmin} className="btn btn-xs">make admin</button>
                     </td> :
 
                     <td></td>
@@ -52,7 +52,7 @@ const AdminAction = ({ allUser, index, refetch, setDeleteModal }) => {
                     :
 
                     <td>
-                        <label onClick={() => setDeleteModal(allUser)} for="delete-user-modal" class="btn btn-xs btn-error">Delete User</label>
+                        <label onClick={() => setDeleteModal(allUser)} for="delete-user-modal" className="btn btn-xs btn-error">Delete User</label>
                     </td>
 
                 }

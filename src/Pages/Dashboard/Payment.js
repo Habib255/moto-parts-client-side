@@ -21,9 +21,9 @@ const Payment = () => {
     return (
         <div className='flex flex-col mt-20 gap-20 justify-center'>
 
-            <div class="card min-w-max bg-base-100 max-h-max text-center shadow-xl">
-                <div class="card-body">
-                    <h2 class="font-bold text-xl">Payment for {order?.productName}</h2>
+            <div className="card min-w-max bg-base-100 max-h-max text-center shadow-xl">
+                <div className="card-body">
+                    <h2 className="font-bold text-xl">Payment for {order?.productName}</h2>
                     <p>Total Quantity: {order?.orderQuantity}</p>
                     <p>Total price: {order?.price}</p>
                 </div>

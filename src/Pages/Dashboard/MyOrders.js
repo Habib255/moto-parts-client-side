@@ -33,8 +33,8 @@ const MyOrders = () => {
 
     return (
         <>
-            <div class="overflow-x-auto w-full">
-                <table class="table w-full">
+            <div className="overflow-x-auto w-full">
+                <table className="table w-full">
 
                     <thead>
                         <tr className='text-center'>
@@ -53,15 +53,15 @@ const MyOrders = () => {
                         <tr className='text-center'>
 
                             <td>
-                                <div class="flex items-center space-x-3">
-                                    <div class="avatar">
-                                        <div class="mask mask-squircle w-12 h-12">
+                                <div className="flex items-center space-x-3">
+                                    <div className="avatar">
+                                        <div className="mask mask-squircle w-12 h-12">
                                             <img src={order.image} alt="product img" />
                                         </div>
                                     </div>
                                     <div>
-                                        <div class="font-bold">{order.productName}</div>
-                                        <div class="text-sm opacity-50">{order.productId}</div>
+                                        <div className="font-bold">{order.productName}</div>
+                                        <div className="text-sm opacity-50">{order.productId}</div>
                                     </div>
                                 </div>
                             </td>
@@ -75,7 +75,7 @@ const MyOrders = () => {
                                 <td> <span className='text-success '>paid</span></td>
                                 :
                                 <td>
-                                    <Link to={`/dashboard/payment/${order._id}`}>  <button class="btn btn-primary btn-xs">Pay Now</button></Link>
+                                    <Link to={`/dashboard/payment/${order._id}`}>  <button className="btn btn-primary btn-xs">Pay Now</button></Link>
                                 </td>
 
 
@@ -84,7 +84,7 @@ const MyOrders = () => {
 
                             {order.payment !== true ?
                                 <td>
-                                    <label onClick={() => setCancelModal(order)} for="delete-user-modal" class="btn btn-secondary btn-xs">Cancel Order</label>
+                                    <label onClick={() => setCancelModal(order)} for="delete-user-modal" className="btn btn-secondary btn-xs">Cancel Order</label>
 
                                 </td>
                                 :

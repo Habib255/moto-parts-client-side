@@ -20,14 +20,19 @@ const Login = () => {
     const location = useLocation()
     const [token] = useToken(user)
     let from = location.state?.from?.pathname || "/home";
+
+    if (error) {
+        loginError = <p>{error.message}</p>
+    }
+
+
     useEffect(() => {
         if (token) {
             return navigate(from, { replace: true });
         }
     }, [token, navigate, from])
-    if (loading) {
-        return <Loading></Loading>
-    }
+
+
 
 
     if (error) {

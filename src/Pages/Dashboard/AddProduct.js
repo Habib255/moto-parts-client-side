@@ -36,48 +36,48 @@ const AddProduct = () => {
             <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col w-96  gap-2 mt-5 '>
 
 
-                <div class="grid w-full min-w-xl">
-                    <label class="label">
-                        <span class="label-text">Product Name : </span>
+                <div className="grid w-full min-w-xl">
+                    <label className="label">
+                        <span className="label-text">Product Name : </span>
                     </label>
-                    <input {...register("name")} type="text" placeholder="Type here" class="input input-sm input-bordered w-full" />
+                    <input {...register("name")} type="text" placeholder="Type here" className="input input-sm input-bordered w-full" />
                 </div>
-                <div class="grid w-full min-w-xl">
-                    <label class="label">
-                        <span class="label-text">Product Details : </span>
+                <div className="grid w-full min-w-xl">
+                    <label className="label">
+                        <span className="label-text">Product Details : </span>
                     </label>
-                    <textarea class="textarea textarea-info w-full w-full" {...register("details")} type="text" placeholder="Type here Details" />
+                    <textarea className="textarea textarea-info w-full w-full" {...register("details")} type="text" placeholder="Type here Details" />
 
                 </div>
-                <div class="grid w-full min-w-xl">
-                    <label class="grid">
-                        <span class="label-text">Available Quantity : </span>
+                <div className="grid w-full min-w-xl">
+                    <label className="grid">
+                        <span className="label-text">Available Quantity : </span>
                     </label>
-                    <input {...register("availableQty")} type="text" placeholder="Type here available quantity" class="input input-sm input-bordered w-full" />
+                    <input {...register("availableQty")} type="text" placeholder="Type here available quantity" className="input input-sm input-bordered w-full" />
                 </div>
-                <div class="grid w-full min-w-xl">
+                <div className="grid w-full min-w-xl">
 
-                    <span class="label-text">Min.Order Quantity: </span>
+                    <span className="label-text">Min.Order Quantity: </span>
 
-                    <input {...register("minOrderQty")} type="text" placeholder="Type here minimum order quantity" class="input input-sm input-bordered w-full " />
+                    <input {...register("minOrderQty")} type="text" placeholder="Type here minimum order quantity" className="input input-sm input-bordered w-full " />
                 </div>
-                <div class="grid w-full min-w-xl">
-                    <label class="label">
-                        <span class="label-text">Price :</span>
+                <div className="grid w-full min-w-xl">
+                    <label className="label">
+                        <span className="label-text">Price :</span>
                     </label>
-                    <input {...register("price")} type="text" placeholder="Type here price" class="input input-sm input-bordered w-full " />
+                    <input {...register("price")} type="text" placeholder="Type here price" className="input input-sm input-bordered w-full " />
                 </div>
-                <div class="grid w-full min-w-xl">
-                    <label class="label">
-                        <span class="label-text">image url :</span>
+                <div className="grid w-full min-w-xl">
+                    <label className="label">
+                        <span className="label-text">image url :</span>
                     </label>
-                    <input {...register("image")} type="text" placeholder="Type here price" class="input input-sm input-bordered w-full " />
+                    <input {...register("image")} type="text" placeholder="Type here price" className="input input-sm input-bordered w-full " />
                 </div>
-                <div class="grid w-full min-w-xl">
-                    <label class="label">
-                        <span class="label-text">Authorizer Email :</span>
+                <div className="grid w-full min-w-xl">
+                    <label className="label">
+                        <span className="label-text">Authorizer Email :</span>
                     </label>
-                    <input {...register("authorizer")} type="text" name='email' value={user.email} disabled class="input input-sm input-bordered w-full " />
+                    <input {...register("authorizer")} type="text" name='email' value={user.email} disabled className="input input-sm input-bordered w-full " />
 
                 </div>
                 <div className="form-control mt-3">

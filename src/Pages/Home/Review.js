@@ -12,11 +12,11 @@ const Review = ({ review }) => {
 
 
     return (
-        <div class="card w-96 bg-neutral text-neutral-content">
-            <div class="card-body items-center text-center">
-                <h2 class="card-title">{customer}</h2>
+        <div className="card w-96 bg-neutral text-neutral-content">
+            <div className="card-body items-center text-center">
+                <h2 className="card-title">{customer}</h2>
                 <p>{feedback}</p>
-                <div class="card-actions justify-end">
+                <div className="card-actions justify-end">
                     {stars.map((_, index) => <FaStar
                         key={index}
                         size={24}

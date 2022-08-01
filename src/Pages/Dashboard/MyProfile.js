@@ -47,9 +47,9 @@ const MyProfile = () => {
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-10'>
 
             <div className='flex justify-center items-center'>
-                <div class=" w-96 bg-base-100 shadow-xl">
-                    <div class="card-body items-start text-center">
-                        <h2 class="card-title">Name: {data?.name || user?.displayName}</h2>
+                <div className=" w-96 bg-base-100 shadow-xl">
+                    <div className="card-body items-start text-center">
+                        <h2 className="card-title">Name: {data?.name || user?.displayName}</h2>
                         <p>Email: {user?.email}</p>
                         <p>Role : {data?.role || 'General User'}</p>
                         <p>Phone: {data?.phone}</p>
@@ -62,7 +62,7 @@ const MyProfile = () => {
             </div>
             <div>
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <div class="card gap-2 p-5 w-96 bg-base-100 shadow-xl">
+                    <div className="card gap-2 p-5 w-96 bg-base-100 shadow-xl">
                         <h2 className='text-xl font-bold'>Update your profile</h2>
                         <div className="form-control">
 

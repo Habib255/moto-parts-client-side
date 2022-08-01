@@ -24,14 +24,14 @@ const DeleteUserModal = ({ setDeleteModal, deleteModal, refetch }) => {
     return (
 
         <div>
-            <input type="checkbox" id="delete-user-modal" class="modal-toggle" />
-            <div class="modal modal-bottom sm:modal-middle">
-                <div class="modal-box">
-                    <h3 class="font-bold text-lg"> Want to Delete {email} !</h3>
-                    <p class="py-4">All information about the user Will Removed after delete!</p>
-                    <div class="modal-action">
-                        <label onClick={() => handleDelete()} for="delete-user-modal" class="btn btn-error">Delete</label>
-                        <label for="delete-user-modal" class="btn btn-modal">Cancel</label>
+            <input type="checkbox" id="delete-user-modal" className="modal-toggle" />
+            <div className="modal modal-bottom sm:modal-middle">
+                <div className="modal-box">
+                    <h3 className="font-bold text-lg"> Want to Delete {email} !</h3>
+                    <p className="py-4">All information about the user Will Removed after delete!</p>
+                    <div className="modal-action">
+                        <label onClick={() => handleDelete()} for="delete-user-modal" className="btn btn-error">Delete</label>
+                        <label for="delete-user-modal" className="btn btn-modal">Cancel</label>
                     </div>
                 </div>
             </div>
