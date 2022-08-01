@@ -35,7 +35,7 @@ const AddReview = () => {
             customer: user.displayName,
             email: user.email
         }
-        const url = 'http://localhost:5000/review'
+        const url = 'https://thawing-waters-08691.herokuapp.com/review'
         fetch(url, {
             method: "POST",
             headers: {
