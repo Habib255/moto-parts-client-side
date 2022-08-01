@@ -1,7 +1,11 @@
 import { useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { FaStar } from "react-icons/fa";
+import { toast } from 'react-toastify'
+import auth from "../../firebase.init";
 
 const AddReview = () => {
+    const [user] = useAuthState(auth)
     const colors = {
         orange: "#FFBA5A",
         grey: "#a9a9a9"
@@ -24,8 +28,29 @@ const AddReview = () => {
     }
     const handleSubmit = (event) => {
         event.preventDefault()
-        setCurrentValue = 0
 
+        const review = {
+            feedback: event.target.opinion.value,
+            rating: currentValue,
+            customer: user.displayName,
+            email: user.email
+        }
+        const url = 'http://localhost:5000/review'
+        fetch(url, {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+
+            },
+            body: JSON.stringify(review)
+        })
+            .then(res => res.json())
+            .then(result => {
+                console.log(result)
+                toast.success('Thanks for your Review')
+                event.target.opinion.value = ''
+                setCurrentValue(0)
+            })
 
 
     }
@@ -43,14 +68,16 @@ const AddReview = () => {
                     className='mr-3 cursor-pointer'
                 />)}
             </div>
-            <textarea name='text'
-                placeholder="What's your experience?"
-                className="border bg-slate-900 rounded-md p-5 my-5 h-48 w-96"
-            />
+            <form onSubmit={handleSubmit}>
+                <textarea name='opinion'
+                    placeholder="What's your experience?"
+                    className="border bg-slate-900 rounded-md p-5 my-5 h-48 w-96"
+                />
 
-            <button onClick={handleSubmit} className="btn btn-accent w-full">Submit</button>
+                <input type='submit' value='submit' className="btn btn-accent w-full"></input>
 
-        </div>
+            </form>
+        </div >
     );
 };
 
