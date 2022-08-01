@@ -6,8 +6,8 @@ import idle from '../bannerImage/idle.png'
 
 const MyPortfolio = () => {
     return (
-        <div className='mx-40  grid grid-cols-3 '>
-            <div class="py-10 col-span-3 flex flex-col gap-2">
+        <div className='container mx-auto  grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3'>
+            <div class="py-10 col-span-1 lg:col-span-2 xl:col-span-3 flex flex-col gap-2">
                 <h2 className='font-bold text-3xl'> Name: Md Habibur Rahman</h2>
                 <h2 className='font-bold text-xl'>Email: arhabib255@gmail.com</h2>
                 <h2 className='font-bold text-base'>Profession: MERN STACK Developer</h2>
