@@ -23,10 +23,16 @@ import useAdmin from './Pages/Hooks/useAdmin';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from './firebase.init';
 import AddProduct from './Pages/Dashboard/AddProduct';
+import Loading from './Pages/Shared/Loading';
+import ManageAllPd from './Pages/Dashboard/ManageAllPd';
 
 function App() {
   const [user] = useAuthState(auth)
-  const [admin] = useAdmin(user)
+  const [admin, adminLoading] = useAdmin(user)
+  if (adminLoading) {
+    return <Loading></Loading>
+  }
+
   return (
     <div>
       <Navbar></Navbar>
@@ -59,6 +65,7 @@ function App() {
           <Route path='payment/:id' element={<Payment></Payment>}></Route>
           <Route path='manageusers' element={<RequireAdmin><ManageUsers></ManageUsers></RequireAdmin>}></Route>
           <Route path='addproduct' element={<RequireAdmin><AddProduct></AddProduct></RequireAdmin>}></Route>
+          <Route path='manageproduct' element={<RequireAdmin><ManageAllPd></ManageAllPd></RequireAdmin>}></Route>
         </Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
 

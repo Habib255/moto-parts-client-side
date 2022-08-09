@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
+import UseProducts from '../Hooks/UseProducts';
+import ManageApd from './ManageApd';
+
 
 const ManageAllPd = () => {
+    const [products, pdLoading] = UseProducts([])
+
     return (
-        <div>
-            <h2>manage all product page</h2>
+        <div className='flex flex-wrap justify-center gap-10 '>
+            {
+                products.map(product => <ManageApd key={product._id} product={product} pdLoading={pdLoading}></ManageApd>)
+            }
+
         </div>
     );
 };
