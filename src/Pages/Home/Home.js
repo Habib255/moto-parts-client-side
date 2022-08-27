@@ -1,5 +1,4 @@
 import React from 'react';
-import Loading from '../Shared/Loading';
 import Carousel from './Carousel';
 import HomeProducts from './HomeProducts';
 import ViewReview from './ViewReview';

@@ -10,7 +10,6 @@ const ViewReview = () => {
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [])
-    console.log(reviews)
 
     return (
         <div>

@@ -12,7 +12,7 @@ const MyPortfolio = () => {
                 <h2 className='font-bold text-xl'>Email: arhabib255@gmail.com</h2>
                 <h2 className='font-bold text-base'>Profession: MERN STACK Developer</h2>
                 <p className='font-bold text-base'>Education: Hsc from Dr. Khandaker Mosharraf Hossain College,</p>
-                <p className='font-bold text-base'>Education: Bsc in CSE in Open university Bangladesh(1st semister)</p>
+                <p className='font-bold text-base'>Education: Bsc in CSE in Bangladesh open University(1st semister)</p>
                 <p className='font-bold text-base'>Skill : HTML, CSS, BOOTSTRAP,TAILWIND CSS, JAVASCRIPT,FIREBASE, REACT JS, NODE JS, EXPRESS JS, MONGODB.</p>
 
             </div>
